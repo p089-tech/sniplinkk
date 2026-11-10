@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SnipLink — URL Shortener & Analytics</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo">
+        <span class="logo-icon">🔗</span>
+        <div>
+          <h1>SnipLink</h1>
+          <p>Simple, fast URL shortener with real-time analytics</p>
+        </div>
+      </div>
+      <div class="badge-tag">Node.js + Express</div>
+    </header>
+
+    <!-- Shortener Input Card -->
+    <section class="card form-card">
+      <form id="shorten-form">
+        <div class="form-inputs">
+          <input 
+            type="text" 
+            id="url-input" 
+            placeholder="Paste your long link here (e.g., https://example.com/very/long/url)" 
+            required 
+            autocomplete="off"
+          />
+          <div class="alias-wrapper">
+            <span class="prefix">/</span>
+            <input 
+              type="text" 
+              id="alias-input" 
+              placeholder="custom-alias (optional)" 
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <button type="submit" id="submit-btn" class="btn-primary">
+          Shorten Link
+        </button>
+      </form>
+      <div id="error-message" class="error-msg" style="display: none;"></div>
+    </section>
+
+    <!-- Analytics & Links Section -->
+    <section class="card links-section">
+      <div class="section-header">
+        <h2>Your Shortened Links</h2>
+        <span class="links-count" id="total-links">0 links</span>
+      </div>
+
+      <div id="links-container" class="links-list">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <div id="empty-state" class="empty-state" style="display: none;">
+        <span class="empty-icon">📂</span>
+        <p>No links shortened yet. Shorten your first URL above!</p>
+      </div>
+    </section>
+
+    <!-- QR Code Modal -->
+    <div id="qr-modal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <span class="close-btn" id="close-modal">&times;</span>
+        <h3>QR Code for Short Link</h3>
+        <p id="qr-url-text" class="qr-url"></p>
+        <div class="qr-image-wrapper">
+          <img id="qr-image" src="" alt="QR Code" />
+        </div>
+        <button id="download-qr-btn" class="btn-secondary">Download QR Code</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

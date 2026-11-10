@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1794312951381",
+    "originalUrl": "https://github.com/trending",
+    "slug": "trending",
+    "clicks": 1,
+    "createdAt": "2026-11-10T12:15:51.381Z",
+    "lastClicked": "2026-11-10T12:15:54.977Z"
+  },
+  {
+    "id": "sample-1",
+    "originalUrl": "https://github.com",
+    "slug": "github",
+    "clicks": 14,
+    "createdAt": "2026-11-10T10:00:00.000Z",
+    "lastClicked": "2026-11-10T11:20:00.000Z"
+  }
+]
